@@ -28,6 +28,21 @@
 	
 	  });
   </script>
+  
+<script>
+    function mobileSalesViewInit() {
+        var listviews = this.element.find("ul.km-listview");
+
+        $("#select-period").kendoMobileButtonGroup({
+            select: function() {
+                listviews.hide()
+                         .eq(this.selectedIndex)
+                         .show();
+            },
+            index: 0
+        });
+    }
+</script>
 </head>
 <body>
     <div data-role="view" id="buttongroup-home" data-init="mobileSalesViewInit" data-title="Sales Report">
@@ -43,34 +58,7 @@
             </ul>
 			
         </div>  
-<style>
-div.km-navbar #backButton {
-    border-width: 0 8px 0 14px;
-    right: 26px;
-    max-width: 55px;
-    padding: 0;
-   
-}
 
-div.km-navbar a {
-    background: none repeat scroll 0 0 transparent;
-    border-width: 0 5px;
-    color: #FFFFFF;
-    font: bold 12px/30px Helvetica;
-    height: 30px;
-    margin: 0;
-    overflow: hidden;
-    padding: 0 3px;
-    position: absolute;
-    right: 6px;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    text-shadow: 0 -1px 0 #2E3744;
-    top: 7px;
-    white-space: nowrap;
-    width: auto;
-}
-</style>
 	
   
   <ul data-role="listview" data-style="inset" data-type="group">
@@ -110,9 +98,9 @@ div.km-navbar a {
 				<div class="tabbed_area">
 				
                     <ul class="tabs">
-                        <li><a href="#" title="content_4" class="tab active">List_2</a></li>
-                        <li><a href="#" title="content_5" class="tab">Photo_2</a></li>
-                        <li><a href="#" title="content_6" class="tab">Map_2</a></li>
+                        <li><a href="#" title="content_4" class="tab active">List</a></li>
+                        <li><a href="#" title="content_5" class="tab">Photo</a></li>
+                        <li><a href="#" title="content_6" class="tab">Map</a></li>
                     </ul>
                     
                     <div id="content_4" class="content">
@@ -140,20 +128,6 @@ div.km-navbar a {
   
 </div>
 
-<script>
-    function mobileSalesViewInit() {
-        var listviews = this.element.find("ul.km-listview");
-
-        $("#select-period").kendoMobileButtonGroup({
-            select: function() {
-                listviews.hide()
-                         .eq(this.selectedIndex)
-                         .show();
-            },
-            index: 0
-        });
-    }
-</script>
 
 <style scoped>
 #buttongroup-home .head {
@@ -210,4 +184,32 @@ div.km-navbar a {
     text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
 }
 .setting_style{ background-color: red;}
+
+div.km-navbar #backButton {
+    border-width: 0 8px 0 14px;
+    right: 26px;
+    max-width: 55px;
+    padding: 0;
+   
+}
+
+div.km-navbar a {
+    background: none repeat scroll 0 0 transparent;
+    border-width: 0 5px;
+    color: #FFFFFF;
+    font: bold 12px/30px Helvetica;
+    height: 30px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 3px;
+    position: absolute;
+    right: 6px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    text-shadow: 0 -1px 0 #2E3744;
+    top: 7px;
+    white-space: nowrap;
+    width: auto;
+}
+
 </style>
