@@ -1,0 +1,213 @@
+<html>
+<head>
+    <script src="jquery.min.js"></script>
+    <script src="kendo.mobile.min.js"></script>
+    <script src="console.js"></script>
+    <link href="kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo.mobile.all.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    
+     <script>
+	  
+	  $(document).ready(function(){
+		
+		
+		$("a.tab").click(function () {
+			
+		
+			$(".active").removeClass("active");
+		
+			$(this).addClass("active");
+			
+			$(".content").slideUp();
+			
+			var content_show = $(this).attr("title");
+			$("#"+content_show).slideDown();
+		  
+		});
+	
+	  });
+  </script>
+</head>
+<body>
+    <div data-role="view" id="buttongroup-home" data-init="mobileSalesViewInit" data-title="Sales Report">
+        <div class="km-navbar">
+            <ul id="select-period" >
+                <li>
+                    People
+                </li>
+                <li>
+                    Venues
+                </li>
+                
+            </ul>
+			
+        </div>  
+<style>
+div.km-navbar #backButton {
+    border-width: 0 8px 0 14px;
+    right: 26px;
+    max-width: 55px;
+    padding: 0;
+   
+}
+
+div.km-navbar a {
+    background: none repeat scroll 0 0 transparent;
+    border-width: 0 5px;
+    color: #FFFFFF;
+    font: bold 12px/30px Helvetica;
+    height: 30px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 3px;
+    position: absolute;
+    right: 6px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    text-shadow: 0 -1px 0 #2E3744;
+    top: 7px;
+    white-space: nowrap;
+    width: auto;
+}
+</style>
+	
+  
+  <ul data-role="listview" data-style="inset" data-type="group">
+		<div id="tabbed_box_1" class="tabbed_box">
+				<div class="tabbed_area">
+				
+				<ul class="tabs">
+					<li><a href="#" title="content_1" class="tab active">List</a></li>
+					<li><a href="#" title="content_2" class="tab">Photo</a></li>
+					<li><a href="#" title="content_3" class="tab">Map</a></li>
+				</ul>
+				
+				<div id="content_1" class="content">
+					<ul>
+						<li><a href="">Sample Data <small>4 Posts</small></a></li>
+						
+					</ul>
+				</div>
+				<div id="content_2" class="content">
+					<ul>
+						<li><a href="">December 2008 <small>6 Posts</small></a></li>
+						
+					</ul>
+				</div>
+				<div id="content_3" class="content">
+					<ul>
+						<li><a href="">Sample Data_1</a></li>
+						
+						<li><a href="">Sample Data_2</a></li>
+					</ul>
+				</div>
+        </div>
+	</div>
+  </ul>
+    <ul data-role="listview" data-style="inset" data-type="group" style="display:none">
+        <div id="tabbed_box_1" class="tabbed_box">
+				<div class="tabbed_area">
+				
+                    <ul class="tabs">
+                        <li><a href="#" title="content_4" class="tab active">List_2</a></li>
+                        <li><a href="#" title="content_5" class="tab">Photo_2</a></li>
+                        <li><a href="#" title="content_6" class="tab">Map_2</a></li>
+                    </ul>
+                    
+                    <div id="content_4" class="content">
+                        <ul>
+                            <li><a href="">Sample Data <small>4 Posts</small></a></li>
+                            
+                        </ul>
+                    </div>
+                    <div id="content_5" class="content">
+                        <ul>
+                            <li><a href="">December 2008 <small>6 Posts</small></a></li>
+                            
+                        </ul>
+                    </div>
+                    <div id="content_6" class="content">
+                        <ul>
+                            <li><a href="">Sample Data_3</a></li>
+                            
+                            <li><a href="">Sample Data_4</a></li>
+                        </ul>
+				</div>
+        </div>
+	</div>
+	</ul>
+  
+</div>
+
+<script>
+    function mobileSalesViewInit() {
+        var listviews = this.element.find("ul.km-listview");
+
+        $("#select-period").kendoMobileButtonGroup({
+            select: function() {
+                listviews.hide()
+                         .eq(this.selectedIndex)
+                         .show();
+            },
+            index: 0
+        });
+    }
+</script>
+
+<style scoped>
+#buttongroup-home .head {
+	display: block;
+    margin: 1em;
+	height: 110px;
+	background: url(../../content/mobile/shared/sales.jpg) no-repeat center center;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.km-ios .head,
+.km-blackberry .head {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#select-period {
+    margin: 1em auto .4em auto;
+}
+#buttongroup-home ul span {
+	float: right;
+}
+#buttongroup-home .sales-up {
+	color: green;
+}
+#buttongroup-home .sales-down {
+	color: red;
+}
+#buttongroup-home .sales-hold {
+	color: blue;
+}
+</style>
+
+
+    <script>
+        window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+    </script>
+</body>
+</html>
+<style>
+.km-ios .km-toolbar, .km-ios .km-navbar, .km-ios .km-button, .km-ios .km-tabstrip, .km-ios .km-popup .k-item {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #7185A2;
+    background-image: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.45) 6%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(100, 100, 100, 0));
+    border-color: #2F3740 #394D68 #375073;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    overflow: visible;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+}
+.setting_style{ background-color: red;}
+</style>
