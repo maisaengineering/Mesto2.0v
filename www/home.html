@@ -5,9 +5,25 @@
     <script src="console.js"></script>
     <link href="kendo.common.min.css" rel="stylesheet" />
     <link href="kendo.mobile.all.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
     
-     <script>
+
+ 
+<script>
+    function mobileSalesViewInit() {
+        var listviews = this.element.find("ul.km-listview");
+
+        $("#select-period").kendoMobileButtonGroup({
+            select: function() {
+                listviews.hide()
+                         .eq(this.selectedIndex)
+                         .show();
+            },
+            index: 0
+        });
+    }
+</script>
+<script>
 	  
 	  $(document).ready(function(){
 		
@@ -28,39 +44,76 @@
 	
 	  });
   </script>
-  
-<script>
-    function mobileSalesViewInit() {
-        var listviews = this.element.find("ul.km-listview");
+ <script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
 
-        $("#select-period").kendoMobileButtonGroup({
-            select: function() {
-                listviews.hide()
-                         .eq(this.selectedIndex)
-                         .show();
-            },
-            index: 0
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
         });
-    }
-</script>
+    </script>
 </head>
 <body>
     <div data-role="view" id="buttongroup-home" data-init="mobileSalesViewInit" data-title="Sales Report">
-        <div class="km-navbar">
-            <ul id="select-period" >
+       	
+<div class="km-navbar">
+ <a  href="settings.html">gps</a>       
+	   <span class="mainselection">
+		   <ul id="select-period" >
                 <li>
                     People
                 </li>
                 <li>
                     Venues
                 </li>
-                
             </ul>
-			
-        </div>  
-
-	
-  
+		</span>
+		    
+		<span class="nav-divi">|</span>
+		<span class="gpssetting"><a class="gps" href="settings.html">Settings</a></span>
+		
+    </div>  
+	<span class="gpssetting1"><a href="settings.html">gps</a></span>
+	<span class="dmenu"> 	
+		<dl id="sample" class="dropdown">
+        <dt><a href="#"><span></span></a></dt>
+        <dd>
+            <ul>
+                <li><a href="#">Brazil<img class="flag" src="br.png" alt="" /><span class="value">BR</span></a></li>
+                <li><a href="#">France<img class="flag" src="fr.png" alt="" /><span class="value">FR</span></a></li>
+                <li><a href="#">Germany<img class="flag" src="de.png" alt="" /><span class="value">DE</span></a></li>
+                <li><a href="#">India<img class="flag" src="in.png" alt="" /><span class="value">IN</span></a></li>
+                <li><a href="#">Japan<img class="flag" src="jp.png" alt="" /><span class="value">JP</span></a></li>
+                <li><a href="#">Serbia<img class="flag" src="cs.png" alt="" /><span class="value">CS</span></a></li>
+                <li><a href="#">United Kingdom<img class="flag" src="gb.png" alt="" /><span class="value">UK</span></a></li>
+                <li><a href="#">United States<img class="flag" src="us.png" alt="" /><span class="value">US</span></a></li>
+            </ul>
+        </dd>
+    </dl>
+	</span>
   <ul data-role="listview" data-style="inset" data-type="group">
 		<div id="tabbed_box_1" class="tabbed_box">
 				<div class="tabbed_area">
@@ -73,7 +126,10 @@
 				
 				<div id="content_1" class="content">
 					<ul>
-						<li><a href="">Sample Data <small>4 Posts</small></a></li>
+						<li><h2>Name One</h2><img src="images/one.png" /></li>
+						<li><h2>Name Two</h2><img src="images/two.png" /></li>
+						<li><h2>Name Three</h2><img src="images/three.png" /></li>
+	
 						
 					</ul>
 				</div>
@@ -97,7 +153,7 @@
         <div id="tabbed_box_1" class="tabbed_box">
 				<div class="tabbed_area">
 				
-                    <ul class="tabs">
+                    <ul class="tabs1">
                         <li><a href="#" title="content_4" class="tab active">List</a></li>
                         <li><a href="#" title="content_5" class="tab">Photo</a></li>
                         <li><a href="#" title="content_6" class="tab">Map</a></li>
@@ -121,15 +177,17 @@
                             
                             <li><a href="">Sample Data_4</a></li>
                         </ul>
+					</div>
 				</div>
-        </div>
-	</div>
+		</div>
 	</ul>
-  
 </div>
-
-
-<style scoped>
+    <script>
+        window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+    </script>
+</body>
+</html>
+<style>
 #buttongroup-home .head {
 	display: block;
     margin: 1em;
@@ -158,15 +216,6 @@
 #buttongroup-home .sales-hold {
 	color: blue;
 }
-</style>
-
-
-    <script>
-        window.kendoMobileApplication = new kendo.mobile.Application(document.body);
-    </script>
-</body>
-</html>
-<style>
 .km-ios .km-toolbar, .km-ios .km-navbar, .km-ios .km-button, .km-ios .km-tabstrip, .km-ios .km-popup .k-item {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
@@ -193,12 +242,20 @@ div.km-navbar #backButton {
    
 }
 
+
+.nav-divi{
+    background-color: #7185A2;
+    float: right;
+    position: relative;
+    right: 57px;
+    top: -35px;
+}
 div.km-navbar a {
     background: none repeat scroll 0 0 transparent;
     border-width: 0 5px;
     color: #FFFFFF;
-    font: bold 12px/30px Helvetica;
-    height: 30px;
+    font-size: 12px;
+    height: 25px;
     margin: 0;
     overflow: hidden;
     padding: 0 3px;
@@ -206,10 +263,52 @@ div.km-navbar a {
     right: 6px;
     text-decoration: none;
     text-overflow: ellipsis;
-    text-shadow: 0 -1px 0 #2E3744;
-    top: 7px;
+    text-shadow: 0 0 0 #2E3744;
+    top: 16px;
     white-space: nowrap;
     width: auto;
 }
+.mainselection{ position: relative;   top: -4px;}
+.gpssetting1{ position: relative; float: right; right: 60px; top: -38px;}
 
+/*Droup Down menu*/
+	
+		.desc { color:#6b6b6b;}
+        .desc a {color:#0092dd;}
+        
+        .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+        .dropdown dd { position:relative; }
+        .dropdown a, .dropdown a:visited { color:#816c5b; text-decoration:none; outline:none;}
+        .dropdown a:hover { color:#5d4617;}
+
+        
+        .dropdown dt a span {cursor:pointer; display:block; padding:5px;}
+        .dropdown dd ul { background:#e4dfcb none repeat scroll 0 0; border:1px solid #d4ca9a; color:#C5C0B0; display:none;
+                          left:0px; padding:5px 0px; position:absolute; top:2px; width:auto; min-width:170px; list-style:none;}
+        .dropdown span.value { display:none;}
+        .dropdown dd ul li a { padding:5px; display:block;}
+        .dropdown dd ul li a:hover { background-color:#d0c9af;}
+        
+        .dropdown img.flag { border:none; vertical-align:middle; margin-left:10px; }
+        .flagvisibility { display:none;}
+		
+		
+		
+		.dropdown dt a {
+    background: url("images/arrow.png") no-repeat scroll right center #E4DFCB;
+    border-radius: 5em 5em 5em 5em;
+    display: block;
+    height: 2em;
+    width: 2em;
+}
+
+
+.dmenu {
+    border-radius: 5em 5em 5em 5em;
+    float: left;
+    left: 40px;
+    position: relative;
+    top: -55px;
+}
+</style>
 </style>

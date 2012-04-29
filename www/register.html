@@ -1,0 +1,82 @@
+<html>
+<head>
+    <script src="jquery-1.4.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="path_to/style.css" type="text/css" media="screen" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+  <script src="iphone-style-checkboxes.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="style_toggle.css" type="text/css" media="screen" charset="utf-8" />
+  
+    <script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+      $('.on_off :checkbox').iphoneStyle();
+      $('.disabled :checkbox').iphoneStyle();
+      $('.css_sized_container :checkbox').iphoneStyle({ resizeContainer: false, resizeHandle: false });
+      $('.long_tiny :checkbox').iphoneStyle({ checkedLabel: 'Very Long Text', uncheckedLabel: 'Tiny' });
+      
+      var onchange_checkbox = ($('.onchange :checkbox')).iphoneStyle({
+        onChange: function(elem, value) { 
+          $('span#status').html(value.toString());
+        }
+      });
+      
+      setInterval(function() {
+        onchange_checkbox.prop('checked', !onchange_checkbox.is(':checked')).iphoneStyle("refresh");
+        return
+      }, 2500);
+    });
+  </script>
+</head>
+<body>
+<div class="register">
+  <table>
+	 <tr >
+		<td>Birthdate</td>
+		<td> 26-04-1990<input type="checkbox" name="dob" /></td>			
+	  </tr> 
+	 <tr class="on_off">
+      <th><label for="on_off">Default</label></th>
+      <td>
+        <input type="checkbox" id="on_off" />
+      </td>
+    </tr>
+	<tr >
+		<td>Profiel Picture</td>
+		<td> upload<input type="checkbox" name="profilep" /></td>			
+	  </tr> 
+  </table>
+  
+<input type="button" value="Continue" onClick="parent.location='home.html'">
+</div> 
+
+<style type="text/css">
+    body {
+      padding: 10px;
+    }
+    label.left {
+      float: left;
+      padding: 4px;
+      padding-right: 15px;
+    }
+    .css_sized_container .iPhoneCheckContainer {
+      width: 250px;
+    }
+    ol {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    ol li {
+      padding: 10px;
+      margin: 0;
+    }
+    .onchange input {
+      opacity: 1 !important;
+      left: 100px;
+    }
+    .onchange .iPhoneCheckContainer {
+      overflow: visible;
+    }
+  
+</style> 
+</body>
+</html>
