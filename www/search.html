@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <script src="jquery.min.js"></script>
+        <script src="kendo.mobile.min.js"></script>
+        <script src="console.js"></script>
+        <link href="kendo.common.min.css" rel="stylesheet" />
+        <link href="kendo.mobile.all.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="main_file.css" type="text/css" />
+        
+        <script>
+            function mobileSalesViewInit() {
+                var listviews = this.element.find("ul.km-listview");
+                
+                $("#select-period").kendoMobileButtonGroup({
+                                                           select: function() {
+                                                           listviews.hide()
+                                                           .eq(this.selectedIndex)
+                                                           .show();
+                                                           },
+                                                           index: 0
+                                                           });
+            }
+            </script>
+  
+        <script type="text/javascript">
+            $(document).ready(function() {
+                              $(".dropdown img.flag").addClass("flagvisibility");
+                              
+                              $(".dropdown dt a").click(function() {
+                                                        $(".dropdown dd ul").toggle();
+                                                        });
+                              
+                              $(".dropdown dd ul li a").click(function() {
+                                                              var text = $(this).html();
+                                                              $(".dropdown dt a span").html(text);
+                                                              $(".dropdown dd ul").hide();
+                                                              $("#result").html("Selected value is: " + getSelectedValue("sample"));
+                                                              });
+                              
+                              function getSelectedValue(id) {
+                              return $("#" + id).find("dt a span.value").html();
+                              }
+                              
+                              $(document).bind('click', function(e) {
+                                               var $clicked = $(e.target);
+                                               if (! $clicked.parents().hasClass("dropdown"))
+                                               $(".dropdown dd ul").hide();
+                                               });
+                              
+                              
+                              $("#flagSwitcher").click(function() {
+                                                       $(".dropdown img.flag").toggleClass("flagvisibility");
+                                                       });
+                              });
+            </script>
+    </head>
+    <body>
+        <div data-role="view" id="buttongroup-home" data-init="mobileSalesViewInit" data-title="Sales Report">
+            
+            <div class="km-navbar">
+                <a  href="settings.html">gps</a>       
+                <span class="mainselection">
+                    <ul id="select-period" >
+                        <li>
+                            People
+                        </li>
+                        <li>
+                            Venues
+                        </li>
+                    </ul>
+                </span>
+                
+                
+               
+                
+            </div>  
+            <span class="dmenu"> 	
+                <dl id="sample" class="dropdown">
+                    <dt><a href="#"><span></span></a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="search.html">Search<img class="flag" src="br.png" alt="" /><span class="value">BR</span></a></li>
+                            <li><a href="home.html">Mesto<img class="flag" src="fr.png" alt="" /><span class="value">FR</span></a></li>
+                            <li><a href="profile.html">Profile<img class="flag" src="de.png" alt="" /><span class="value">DE</span></a></li>
+                            <li><a href="inbox.html">Inbox<img class="flag" src="in.png" alt="" /><span class="value">IN</span></a></li>
+                            <li><a href="justmet.html">JustMet<img class="flag" src="jp.png" alt="" /><span class="value">JP</span></a></li>
+                            <li><a href="checkin.html">Check in<img class="flag" src="cs.png" alt="" /><span class="value">CS</span></a></li>
+                            
+                        </ul>
+                    </dd>
+                </dl>
+            </span>
+            <ul data-role="listview" data-style="inset" data-type="group">
+                <center>
+                    <form class="searchform">
+                        <input class="searchfield" type="text" value="Search..." onfocus="if (this.value == 'What's happening....') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" />
+                    </form>
+                </center><br><br>
+                <ul>
+                    <input type="hidden" name="sitesearch" value="mysite.com" id="ss1"></input>
+                    <li><table><td><img src="images/one.png" /></td><td><h2>Name One</h2></td></table></li>
+                    <div class="samlltext">Last seen: xyz, 1hr ago<span class="distance">5 km</span></div>
+                    <style>.samlltext{background-color: #EDE6F9;}</style>						<li><table><td><img src="images/two.png" /></td><td><h2>Second </h2></td></table></li>
+                    <div class="samlltext">Last seen: xyz, 2hr ago<span class="distance">7 km</span></div>
+                    <li><table><td><img src="images/three.png" /></td><td><h2>Three </h2></td></table></li>
+                    <div class="samlltext">Last seen: xyz, 7hr ago<span class="distance">3 km</span></div>
+                    
+                </ul>
+            </ul>
+            <ul data-role="listview" data-style="inset" data-type="group" style="display:none">
+                second screen
+            </ul>
+        </div>
+        <script>
+            window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+            </script>
+    </body>
+    <style> 
+        body{background-color: #6b6b6b;}    
+    </style>
+</html>
+

@@ -6,8 +6,7 @@
     <link href="kendo.common.min.css" rel="stylesheet" />
     <link href="kendo.mobile.all.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
-    
-
+    <link rel="stylesheet" href="main_file.css" type="text/css" />
  
 <script>
     function mobileSalesViewInit() {
@@ -93,7 +92,7 @@
 		</span>
 		    
 		<span class="nav-divi">|</span>
-		<span class="gpssetting"><a class="gps" href="settings.html">Settings</a></span>
+		<span class="gpssetting"><a class="gps" href="settings.html"><img src="images/settings.png" width="20" height="20"></a></span>
 		
     </div>  
 	<span class="gpssetting1"><a href="settings.html">gps</a></span>
@@ -102,14 +101,13 @@
         <dt><a href="#"><span></span></a></dt>
         <dd>
             <ul>
-                <li><a href="#">Brazil<img class="flag" src="br.png" alt="" /><span class="value">BR</span></a></li>
-                <li><a href="#">France<img class="flag" src="fr.png" alt="" /><span class="value">FR</span></a></li>
-                <li><a href="#">Germany<img class="flag" src="de.png" alt="" /><span class="value">DE</span></a></li>
-                <li><a href="#">India<img class="flag" src="in.png" alt="" /><span class="value">IN</span></a></li>
-                <li><a href="#">Japan<img class="flag" src="jp.png" alt="" /><span class="value">JP</span></a></li>
-                <li><a href="#">Serbia<img class="flag" src="cs.png" alt="" /><span class="value">CS</span></a></li>
-                <li><a href="#">United Kingdom<img class="flag" src="gb.png" alt="" /><span class="value">UK</span></a></li>
-                <li><a href="#">United States<img class="flag" src="us.png" alt="" /><span class="value">US</span></a></li>
+                <li><a href="search.html">Search<img class="flag" src="br.png" alt="" /><span class="value">BR</span></a></li>
+                <li><a href="home.html">Mesto<img class="flag" src="fr.png" alt="" /><span class="value">FR</span></a></li>
+                <li><a href="profile.html">Profile<img class="flag" src="de.png" alt="" /><span class="value">DE</span></a></li>
+                <li><a href="inbox.html">Inbox<img class="flag" src="in.png" alt="" /><span class="value">IN</span></a></li>
+                <li><a href="justmet.html">JustMet<img class="flag" src="jp.png" alt="" /><span class="value">JP</span></a></li>
+                <li><a href="checkin.html">Check in<img class="flag" src="cs.png" alt="" /><span class="value">CS</span></a></li>
+               	
             </ul>
         </dd>
     </dl>
@@ -125,12 +123,20 @@
 				</ul>
 				
 				<div id="content_1" class="content">
+                    <center>
+                        <form class="searchform">
+                        <input class="searchfield" type="text" value="Search..." onfocus="if (this.value == 'What's happening....') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" />
+                        </form>
+                    </center><br><br>
 					<ul>
-						<li><h2>Name One</h2><img src="images/one.png" /></li>
-						<li><h2>Name Two</h2><img src="images/two.png" /></li>
-						<li><h2>Name Three</h2><img src="images/three.png" /></li>
+					<input type="hidden" name="sitesearch" value="mysite.com" id="ss1"></input>
+                        <li><table><td><img src="images/one.png" /></td><td><h2>Name One</h2></td></table></li>
+                        <div class="samlltext">Last seen: xyz, 1hr ago<span class="distance">5 km</span></div>
+                        <style>.samlltext{background-color: #EDE6F9;}</style>						<li><table><td><img src="images/two.png" /></td><td><h2>Second </h2></td></table></li>
+                        <div class="samlltext">Last seen: xyz, 2hr ago<span class="distance">7 km</span></div>
+						<li><table><td><img src="images/three.png" /></td><td><h2>Three </h2></td></table></li>
+                        <div class="samlltext">Last seen: xyz, 7hr ago<span class="distance">3 km</span></div>
 	
-						
 					</ul>
 				</div>
 				<div id="content_2" class="content">
@@ -187,128 +193,4 @@
     </script>
 </body>
 </html>
-<style>
-#buttongroup-home .head {
-	display: block;
-    margin: 1em;
-	height: 110px;
-	background: url(../../content/mobile/shared/sales.jpg) no-repeat center center;
-    -webkit-background-size: 100% auto;
-    background-size: 100% auto;
-}
-.km-ios .head,
-.km-blackberry .head {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-#select-period {
-    margin: 1em auto .4em auto;
-}
-#buttongroup-home ul span {
-	float: right;
-}
-#buttongroup-home .sales-up {
-	color: green;
-}
-#buttongroup-home .sales-down {
-	color: red;
-}
-#buttongroup-home .sales-hold {
-	color: blue;
-}
-.km-ios .km-toolbar, .km-ios .km-navbar, .km-ios .km-button, .km-ios .km-tabstrip, .km-ios .km-popup .k-item {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background-color: #7185A2;
-    background-image: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.45) 6%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(100, 100, 100, 0));
-    border-color: #2F3740 #394D68 #375073;
-    border-style: solid;
-    border-width: 1px;
-    color: #FFFFFF;
-    overflow: visible;
-    text-decoration: none;
-    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
-}
-.setting_style{ background-color: red;}
 
-div.km-navbar #backButton {
-    border-width: 0 8px 0 14px;
-    right: 26px;
-    max-width: 55px;
-    padding: 0;
-   
-}
-
-
-.nav-divi{
-    background-color: #7185A2;
-    float: right;
-    position: relative;
-    right: 57px;
-    top: -35px;
-}
-div.km-navbar a {
-    background: none repeat scroll 0 0 transparent;
-    border-width: 0 5px;
-    color: #FFFFFF;
-    font-size: 12px;
-    height: 25px;
-    margin: 0;
-    overflow: hidden;
-    padding: 0 3px;
-    position: absolute;
-    right: 6px;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    text-shadow: 0 0 0 #2E3744;
-    top: 16px;
-    white-space: nowrap;
-    width: auto;
-}
-.mainselection{ position: relative;   top: -4px;}
-.gpssetting1{ position: relative; float: right; right: 60px; top: -38px;}
-
-/*Droup Down menu*/
-	
-		.desc { color:#6b6b6b;}
-        .desc a {color:#0092dd;}
-        
-        .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
-        .dropdown dd { position:relative; }
-        .dropdown a, .dropdown a:visited { color:#816c5b; text-decoration:none; outline:none;}
-        .dropdown a:hover { color:#5d4617;}
-
-        
-        .dropdown dt a span {cursor:pointer; display:block; padding:5px;}
-        .dropdown dd ul { background:#e4dfcb none repeat scroll 0 0; border:1px solid #d4ca9a; color:#C5C0B0; display:none;
-                          left:0px; padding:5px 0px; position:absolute; top:2px; width:auto; min-width:170px; list-style:none;}
-        .dropdown span.value { display:none;}
-        .dropdown dd ul li a { padding:5px; display:block;}
-        .dropdown dd ul li a:hover { background-color:#d0c9af;}
-        
-        .dropdown img.flag { border:none; vertical-align:middle; margin-left:10px; }
-        .flagvisibility { display:none;}
-		
-		
-		
-		.dropdown dt a {
-    background: url("images/arrow.png") no-repeat scroll right center #E4DFCB;
-    border-radius: 5em 5em 5em 5em;
-    display: block;
-    height: 2em;
-    width: 2em;
-}
-
-
-.dmenu {
-    border-radius: 5em 5em 5em 5em;
-    float: left;
-    left: 40px;
-    position: relative;
-    top: -55px;
-}
-</style>
-</style>

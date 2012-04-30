@@ -118,7 +118,7 @@ ul.tabs1 li a.active {
     background-repeat: repeat-x;
     border: 1px solid #464C54;
     font-family: Arial,Helvetica,sans-serif;
-    padding: 10px;
+    padding: 0px;
 }
 #content_2, #content_3 {
     display: none;
