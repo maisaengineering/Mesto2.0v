@@ -76,10 +76,8 @@
     </script>
 </head>
 <body>
-    <div data-role="view" id="buttongroup-home" data-init="mobileSalesViewInit" data-title="Sales Report">
-       	
 <div class="km-navbar">
- <a  href="settings.html">gps</a>       
+       
 	   <span class="mainselection">
 		   <ul id="select-period" >
                 <li>
@@ -89,13 +87,11 @@
                     Venues
                 </li>
             </ul>
-		</span>
-		    
+		</span>    
 		<span class="nav-divi">|</span>
 		<span class="gpssetting"><a class="gps" href="settings.html"><img src="images/settings.png" width="20" height="20"></a></span>
-		
+			<span class="gpssetting1"><a href="settings.html">gps</a></span>
     </div>  
-	<span class="gpssetting1"><a href="settings.html">gps</a></span>
 	<span class="dmenu"> 	
 		<dl id="sample" class="dropdown">
         <dt><a href="#"><span></span></a></dt>
@@ -111,8 +107,9 @@
             </ul>
         </dd>
     </dl>
-	</span>
-  <ul data-role="listview" data-style="inset" data-type="group">
+	</span>	
+    <div data-role="view" id="buttongroup-home" data-init="mobileSalesViewInit" data-title="Sales Report">
+       <ul data-role="listview" data-style="inset" data-type="group">
 		<div id="tabbed_box_1" class="tabbed_box">
 				<div class="tabbed_area">
 				

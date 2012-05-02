@@ -115,8 +115,8 @@ div.km-navbar a {
     border-radius: 5em 5em 5em 5em;
     float: left;
     left: 9px;
-    position: relative;
-    top: -55px;
+    position: absolute;
+    top: 0;
 }
 /*search box*/
 <style type="text/css">
