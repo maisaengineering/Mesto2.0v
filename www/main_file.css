@@ -79,8 +79,8 @@ div.km-navbar a {
     width: auto;
 }
 .mainselection{ position: relative;   top: -4px;}
-.gpssetting1{ position: relative; float: right; right: 46px; top: -33px;}
-
+.gpssetting1{    color: #FFFFFF;    float: right;    position: relative;    right: 30px;    top: -33px;}
+.gpssetting{position: relative; float: right; top: -34px;}
 /*Droup Down menu*/
 
 .desc { color:#6b6b6b;}

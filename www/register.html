@@ -1,40 +1,47 @@
 <html>
 <head>
-    <script src="jquery-1.4.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="path_to/style.css" type="text/css" media="screen" />
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
-  <script src="iphone-style-checkboxes.js" type="text/javascript" charset="utf-8"></script>
-  <link rel="stylesheet" href="style_toggle.css" type="text/css" media="screen" charset="utf-8" />
-  	<link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.2.1/resources/css/ext-all.css" />
-  <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.2.1/resources/css/xtheme-access.css" />
-  <link rel="stylesheet" href="toggle-slide-access.css" type="text/css" media="screen" charset="utf-8" />
-
-
+  <script src="jquery.js" type="text/javascript"></script>
+  <script src="jquery.iphone-switch.js" type="text/javascript"></script>
+  <script src="phonegap-1.2.0.js"></script>
+	<script src="js/jquery-1.5.min.js"></script>
+	<script src="js/load-json.js"></script>
   
-    <script>
-    $(window).load(function() {
-      $('.on_off :checkbox').iphoneStyle();
-      $('.disabled :checkbox').iphoneStyle();
-      $('.css_sized_container :checkbox').iphoneStyle({ resizeContainer: false, resizeHandle: false });
-      $('.long_tiny :checkbox').iphoneStyle({ checkedLabel: 'Very Long Text', uncheckedLabel: 'Tiny' });
-      
-      var onchange_checkbox = ($('.onchange :checkbox')).iphoneStyle({
-        onChange: function(elem, value) { 
-          $('span#status').html(value.toString());
-        }
+  <script type="text/javascript">
+  
+    $('#1').iphoneSwitch("on", 
+     function() {
+       $('#ajax').load('on.html');
+      },
+      function() {
+       $('#ajax').load('off.html');
+      },
+      {
+        switch_on_container_path: 'iphone_switch_container_off.png'
       });
-      
-      setInterval(function() {
-        onchange_checkbox.prop('checked', !onchange_checkbox.is(':checked')).iphoneStyle("refresh");
-        return
-      }, 2500);
-    });
   </script>
+  
+<script>
+		function onBodyLoad() {		
+			document.addEventListener("deviceready",onDeviceReady,false);
+		}
+	</script>
 
+<script type="text/javascript">
 
+   $(document).ready(function() {
+    var url =  "http://mesto.nu/mesto";
+    $.getJSON(url + "?callback=?", null,function(data) {
+         jQuery.each(data, function(currency, value) {
+         $("body").append("<div class="currency">"+currency+"</div><div class="value">"+value+"</div>");
+          });
+
+    });
+    });
 </script>
 </head>
-<body >
+<body onload="onBodyLoad()">
+<div id="output"></div>
+
     <center><image src="images/five.png	"><br></br></br>
 <div class="register">
   <table class="registercolor">
@@ -44,8 +51,11 @@
 	  </tr> </br>
 	<tr>
         <td>Show age publically</td>
-		<td> <input type="checkbox" name="sap" /></td>
-	 
+		<td> 
+			<div class="left" id="1"></div>
+			<div id="ajax"></div>
+			<div class="clear"></div>
+		</td>
 	</tr>
 	 </br>	
 	<tr >
@@ -55,88 +65,24 @@
   </table>
   <br>
 <input type="button" value="Sign in" onClick="parent.location='home.html'">
+ 
+
 </div> 
 
-<style type="text/css">
-    #stage {
-                background-color: #383839;
-        background-repeat: no-repeat;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#5c5f62), to(#383839));
-        background-image: -webkit-linear-gradient(#5c5f62, #383839);
-        background-image: -moz-linear-gradient(#5c5f62, #383839);
-        background-image: -o-linear-gradient(top, #5c5f62, #383839);
-        background-image: -khtml-gradient(linear, left top, left bottom, from(#5c5f62), to(#383839));
-        filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#5c5f62', EndColorStr='#383839', GradientType=0);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#5c5f62', EndColorStr='#383839', GradientType=0))";
-    }
-    #stage .slider-frame {
-        position: relative;
-        display: block;
-        margin: 0;
-        padding: 0;
-        margin: 0 auto;
-        width: 85px;
-        height: 29px;
-        background-color: #404040;
-        background-repeat: no-repeat;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#2b2b2b), to(#404040));
-        background-image: -webkit-linear-gradient(#2b2b2b, #404040);
-        background-image: -moz-linear-gradient(#2b2b2b, #404040);
-        background-image: -o-linear-gradient(top, #2b2b2b, #404040);
-        background-image: -khtml-gradient(linear, left top, left bottom, from(#2b2b2b), to(#404040));
-        filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#2b2b2b', EndColorStr='#404040', GradientType=0);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#2b2b2b', EndColorStr='#404040', GradientType=0))";
-        border-top: 1px solid #333333;
-        border-right: 1px solid #333333;
-        border-bottom: 1px solid #666666;
-        border-left: 1px solid #333333;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        -webkit-box-shadow: inset 0px 1px 8px 0 rgba(0, 0, 0, 0.25);
-        -moz-box-shadow: inset 0px 1px 8px 0 rgba(0, 0, 0, 0.25);
-        box-shadow: inset 0px 1px 8px 0 rgba(0, 0, 0, 0.25);
-    }
-    #stage .slider-frame .slider-button {
-        display: block;
-        margin: 0;
-        padding: 0;
-        width: 43px;
-        height: 27px;
-        line-height: 27px;
-        background: #d37a16;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        border: 1px solid #70430e;
-        -webkit-transition: all 0.25s ease-in-out;
-        -moz-transition: all 0.25s ease-in-out;
-        transition: all 0.25s ease-in-out;
-        color: #fff;
-        font-family:Helvetica;
-        font-size:11px;
-        font-weight: bold;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        text-align: center;
-        cursor: pointer;
-    }
-    #stage .slider-frame .slider-button.on {
-        margin-left: 40px;
-        background: #2372c6;
-        border: 1px solid #0f3f74;
-    }
-    #stage .slider-frame .slider-button:before {
-        position: absolute;
-        display: block;
-        margin: 0;
-        padding: 0;
-        width: 43px;
-        height: 12px;
-        background: rgba(255, 255, 255, 0.25);
-        content: '';
-        -moz-border-radius: 15px;
-        border-radius: 15px;
-    }
-    .register{background-color: }
-    
-</style> </center>
+<style>
+.left{
+float:left;
+width:120px;}
+
+#ajax{
+float:left;
+width:300px;
+padding-top:5px;
+font-weight:700;
+}
+
+.clear{clear:both;}
+
+</style>
 </body>
 </html>
