@@ -1,0 +1,198 @@
+
+#tabbed_box_1 {
+    margin: -14px auto;
+    width: 100%;
+}
+ul.tabs1 li a {
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 1px 1px 1px #FFFFFF inset;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+ul.tabs1 li a.active {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    background-position: center top;
+    background-repeat: repeat-x;
+    border-color: #E1E5FF #E1E5FF #FFFFFF;
+    border-style: solid;
+    border-width: 8px;
+    color: #282E32;
+    position: relative;
+    top: -1px;
+}
+
+ul.tabs1 li a {
+    background-color: #464C54;
+    background-image: url("images/tab_off.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    border: 1px solid #464C54;
+    color: #FFEBB5;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 9px 21px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.tabbed_box h4 {
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 23px;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+.tabbed_box h4 small {
+    color: #E3E9EC;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    font-weight: normal;
+    left: 6px;
+    letter-spacing: 0;
+    position: relative;
+    text-transform: uppercase;
+    top: -4px;
+}
+ul.tabs1 {
+    margin: 5px 0 6px;
+    padding: 0;
+}
+ul.tabs1 li {
+    display: inline;
+    list-style: none outside none;
+}
+ul.tabs1 li a {
+    background-color: #464C54;
+    background-image: url("images/tab_off.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    border: 1px solid #464C54;
+    color: #FFEBB5;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 7px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+ul.tabs {
+    margin: 5px 0 6px;
+    padding: 0;
+}
+ul.tabs li {
+    display: inline;
+    list-style: none outside none;
+}
+ul.tabs li a {
+    background-color: #464C54;
+    background-image: url("images/tab_off.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    border: 1px solid #464C54;
+    color: #FFEBB5;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 9px 21px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+ul.tabs li a.active {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    background-position: center top;
+    background-repeat: repeat-x;
+    border-color: #E1E5FF #E1E5FF #FFFFFF;
+    border-style: solid;
+    border-width: 8px;
+    color: #282E32;
+    position: relative;
+    top: -1px;
+}
+
+.tabbed_area {
+    background-color: #E1E5FF;
+    float: right;
+    margin-top: 0;
+    padding: 9px;
+    position: relative;
+    right: -13px;
+    top: -79px;
+    width: 101%;
+}
+.content {
+    background-color: #FFFFFF;
+    background-image: url("images/content_bottom.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: -7px;
+    padding: 0;
+    position: relative;
+    top: 10px;
+    width: 103%;
+}
+ul.tabs li a {
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 1px 1px 1px #FFFFFF inset;
+
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#content_2, #content_3 {
+    display: none;
+}
+.content ul {
+    margin: 0;
+    padding: 0 20px;
+}
+.content ul li {
+    border-bottom: 1px solid #D6DDE0;
+    font-size: 13px;
+    list-style: none outside none;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.content ul li:last-child {
+    border-bottom: medium none;
+}
+.content ul li a {
+    color: #3E4346;
+    text-decoration: none;
+}
+.content ul li a small {
+    color: #8B959C;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    left: 4px;
+    position: relative;
+    text-transform: uppercase;
+    top: 0;
+}
+.content ul li a:hover {
+    color: #A59C83;
+}
+.content ul li a:hover small {
+    color: #BAAE8E;
+}
