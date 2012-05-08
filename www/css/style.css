@@ -31,11 +31,11 @@ ul.tabs1 li a.active {
 }
 
 ul.tabs1 li a {
-    background-color: #464C54;
+    background-color: #E1E5FF;
     background-image: url("images/tab_off.jpg");
     background-position: center bottom;
     background-repeat: repeat-x;
-    border: 1px solid #464C54;
+    border: 1px solid #E1E5FF;
     color: #FFEBB5;
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 8px;
@@ -72,20 +72,7 @@ ul.tabs1 li {
     display: inline;
     list-style: none outside none;
 }
-ul.tabs1 li a {
-    background-color: #464C54;
-    background-image: url("images/tab_off.jpg");
-    background-position: center bottom;
-    background-repeat: repeat-x;
-    border: 1px solid #464C54;
-    color: #FFEBB5;
-    font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 7px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
+
 ul.tabs {
     margin: 5px 0 6px;
     padding: 0;
@@ -94,20 +81,7 @@ ul.tabs li {
     display: inline;
     list-style: none outside none;
 }
-ul.tabs li a {
-    background-color: #464C54;
-    background-image: url("images/tab_off.jpg");
-    background-position: center bottom;
-    background-repeat: repeat-x;
-    border: 1px solid #464C54;
-    color: #FFEBB5;
-    font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 9px 21px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
+
 
 ul.tabs li a.active {
     -moz-border-bottom-colors: none;
@@ -133,9 +107,35 @@ ul.tabs li a.active {
     padding: 9px;
     position: relative;
     right: -13px;
-    top: -79px;
+    top: -42px;
     width: 101%;
 }
+ul.tabs li a {
+    background-color: #E1E5FF;
+    background-image: url("images/tab_off.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 9px 21px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+ul.tabs1 li a {
+    background-color: #E1E5FF;
+    background-image: url("images/tab_off.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 6px 7px;
+    text-decoration: none;
+    text-transform: uppercase;
+}	
 .content {
     background-color: #FFFFFF;
     background-image: url("images/content_bottom.jpg");
@@ -155,7 +155,7 @@ ul.tabs li a {
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 8px;
     font-weight: bold;
-    padding: 6px 20px;
+    padding: 6px 7px;
     text-decoration: none;
     text-transform: uppercase;
 }

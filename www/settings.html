@@ -1,15 +1,226 @@
 <html>
-<head>
-    <script src="jquery.min.js"></script>
-    <script src="kendo.mobile.min.js"></script>
-    <script src="console.js"></script>
-    <link href="kendo.common.min.css" rel="stylesheet" />
-    <link href="kendo.mobile.all.min.css" rel="stylesheet" />
-</head>
-<body>
-<div class="km-navbar">
-    
-		<a href="home.html" id="backButton">back</a>
-</div>
-</body>
+    <head>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/kendo.mobile.min.js"></script>
+        <script src="js/console.js"></script>
+        <link href="css/kendo.common.min.css" rel="stylesheet" />
+        <link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <link href="css/main_file.css" rel="stylesheet" />
+       
+       
+        <script>
+            function mobileSalesViewInit() {
+                var listviews = this.element.find("ul.km-listview");
+               
+                $("#select-period").kendoMobileButtonGroup({
+                                                           select: function() {
+                                                           listviews.hide()
+                                                           .eq(this.selectedIndex)
+                                                           .show();
+                                                           },
+                                                           index: 0
+                                                           });
+            }
+            </script>
+        <script>
+           
+            $(document).ready(function(){
+                             
+                             
+                              $("a.tab").click(function () {
+                                              
+                                              
+                                               $(".active").removeClass("active");
+                                              
+                                               $(this).addClass("active");
+                                              
+                                               $(".content").slideUp();
+                                              
+                                               var content_show = $(this).attr("title");
+                                               $("#"+content_show).slideDown();
+                                              
+                                               });
+                             
+                              });
+            </script>
+        
+    </head>
+    <body>
+        <div data-role="view" id="buttongroup-home" data-init="mobileSalesViewInit" data-title="Sales Report">
+           
+            <div class="km-navbar">
+                   
+               <span class="gpssetting"><a class="backbutton" href="home.html" > <span class="retunrtype">Return</span></a></span>
+               <span class="gpssetting"><a class="logout" ></a></span>
+               
+               
+            </div> 
+            
+            
+            <ul data-role="listview" data-style="inset" data-type="group">
+                <div id="tabbed_box_1" class="tabbed_box">
+                    <div class="tabbed_area">
+                       
+                        <ul class="tabs">
+                            <li><a href="#" title="content_1" class="tab active">Connect</a></li>
+                            <li><a href="#" title="content_2" class="tab">Notify me</a></li>
+                            <li><a href="#" title="content_3" class="tab">Blocked</a></li>
+							<li><a href="#" title="content_4" class="tab">Info</a></li>	
+                        </ul>
+                       
+                        <div id="content_1" class="content">
+                            <ul>
+                               Choose who you want to connect<br>
+ 								Radius 500m
+								
+                               
+                            </ul>
+                        </div>
+                        <div id="content_2" class="content">
+                            <ul>
+                                <li><a href="">December 2008 <small>6 Posts</small></a></li>
+                               
+                            </ul>
+                        </div>
+                        <div id="content_3" class="content">
+                            <ul>
+                                <li><a href="">Sample Data_1</a></li>
+                               
+                                <li><a href="">Sample Data_2</a></li>
+                            </ul>
+                        </div>
+						<div id="content_4" class="content">
+                           
+                        </div>
+                    </div>
+                </div>
+            </ul>
+           
+        </div>
+        <script>
+            window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+            </script>
+    </body>
 </html>
+<style>
+    #buttongroup-home .head {
+        display: block;
+        margin: 1em;
+        height: 110px;
+        background: url(../../content/mobile/shared/sales.jpg) no-repeat center center;
+        -webkit-background-size: 100% auto;
+        background-size: 100% auto;
+    }
+    .km-ios .head,.km-blackberry .head {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+    #select-period {
+        margin: 1em auto .4em auto;
+    }
+    #buttongroup-home ul span {
+        float: right;
+    }
+    #buttongroup-home .sales-up {
+        color: green;
+    }
+    #buttongroup-home .sales-down {
+        color: red;
+    }
+    #buttongroup-home .sales-hold {
+        color: blue;
+    }
+   
+    .setting_style{ background-color: red;}
+   
+    div.km-navbar #backButton {
+        border-width: 0 8px 0 14px;
+        right: 26px;
+        max-width: 55px;
+        padding: 0;
+       
+    }
+   	.retunrtype {
+	    float: right;
+	    position: relative;
+	    top: 10px;
+	}
+   
+    .nav-divi{
+        background-color: red;
+        float: right;
+        position: relative;
+        right: 52px;
+        top: -35px;
+		width: 30px;
+    }
+    
+    .mainselection{ position: relative;   top: -4px;}
+    .gpssetting1{ position: relative; float: right; right: 60px; top: -38px;}
+   
+
+	div.km-navbar a.logout {	    background: none repeat scroll 0 0 red;	    position: absolute;	    top: 49px;	}
+	div.km-navbar a.backbutton {
+	    background: none repeat scroll 0 0 #978AB5;
+	    border-bottom-left-radius: 34px;
+	    border-top-left-radius: 42px;
+	    float: right;
+	    height: 34px;
+	    position: relative;
+	    right: 1293px;
+	    top: 45px;
+	    width: 49px;
+	}
+	.km-root div:-moz-any(.km-toolbar, .km-navbar) {
+    height: 64px;
+    overflow: visible;
+    top: -1px;
+}
+    .desc { color:#6b6b6b;}
+    .desc a {color:#0092dd;}
+   
+    .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+    .dropdown dd { position:relative; }
+    .dropdown a, .dropdown a:visited { color:#FFF; text-decoration:none; outline:none;}
+    .dropdown a:hover { color:#5d4617;}
+   
+   
+    .dropdown dt a span {cursor:pointer; display:block; padding:5px;}
+    
+    .dropdown span.value { display:none;}
+    .dropdown dd ul li a { padding:5px; display:block;}
+    .dropdown dd ul li a:hover { background-color:#4A235E ; color: #FFF;}
+   
+    .dropdown img.flag { border:none; vertical-align:middle; margin-left:10px; }
+    .flagvisibility { display:none;}
+   .tabbed_area {
+    background-color: #E1E5FF;
+    float: right;
+    margin-top: 0;
+    padding: 9px;
+    position: relative;
+    right: -13px;
+    top: -79px;
+    width: 101%;
+}
+   
+   
+.dmenu {
+    background-image: url("images/sprite-layout.png");
+    float: left;
+    left: -3px;
+    position: relative;
+    top: -72px;
+}
+
+br {
+   display: block;
+   margin: -1px 0;
+}
+#tabbed_box_1 {
+    margin: 78px auto;
+    width: 100%;
+}
+    </style>
+
