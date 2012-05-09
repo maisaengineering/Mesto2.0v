@@ -84,7 +84,7 @@
                 <span class="mainselection">
                     <ul id="select-period" >
                         <li>
-                            People
+                            People<span id="first"></span>
                         </li>
                         <li>
                             Venue
@@ -122,14 +122,24 @@
                     <div class="tabbed_area">
                        
                         <ul class="tabs">
+							
                             <li><a href="#" title="content_1" class="tab active">List</a></li>
                             <li><a href="#" title="content_2" class="tab">Photo</a></li>
                             <li><a href="#" title="content_3" class="tab">Map</a></li>
                         </ul>
                        
                         <div id="content_1" class="content">
-                            <ul>
-                                hey its first page
+								<center>
+									<form class="searchform">
+										<input class="searchfield" type="text" value="What's happening...." onfocus="if (this.value == 'What's happening....') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" />
+									</form>
+								</center><br>
+						   <ul>
+								
+                                <li><h2>Name One</h2><img src="images/one.png" /></li>
+                                <li><h2>Name Two</h2><img src="images/two.png" /></li>
+                                <li><h2>Name Three</h2><img src="images/three.png" /></li>
+                               
                                
                             </ul>
                         </div>
@@ -188,19 +198,11 @@
     </body>
 </html>
 <style>
-    #buttongroup-home .head {
-        display: block;
-        margin: 1em;
-        height: 110px;
-        background: url(../../content/mobile/shared/sales.jpg) no-repeat center center;
-        -webkit-background-size: 100% auto;
-        background-size: 100% auto;
-    }
-    .km-ios .head,.km-blackberry .head {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-    }
     
+	
+    #select-period {
+       margin: 1em auto -1.6em;
+    }
     #buttongroup-home ul span {
         float: right;
     }
@@ -234,7 +236,7 @@
 		width: 30px;
     }
     
-    
+    .mainselection{ position: relative;   top: -4px;}
     .gpssetting1{ position: relative; float: right; right: 60px; top: -38px;}
    
  
@@ -244,7 +246,7 @@
     height: 54px;
     right: 1px;
     width: 31px;
-       top: 26px;
+	top: 18px;
 }
 div.km-navbar a.line {
     background: url("sprite-layout.PNG") repeat scroll -570px -17px transparent;
@@ -252,7 +254,7 @@ div.km-navbar a.line {
     height: 54px;
     right: 36px;
     width: 9px;
-    top: 26px;
+	top: 18px;
 }
 div.km-navbar a.gpssetting {
     background: url("sprite-layout.PNG") repeat scroll -503px -17px transparent;
@@ -260,7 +262,7 @@ div.km-navbar a.gpssetting {
     height: 54px;
     right: 57px;
     width: 50px;
-    top: 26px;
+	top: 18px;
 }
     .desc { color:#6b6b6b;}
     .desc a {color:#0092dd;}
@@ -280,24 +282,50 @@ div.km-navbar a.gpssetting {
     .dropdown img.flag { border:none; vertical-align:middle; margin-left:10px; }
     .flagvisibility { display:none;}
    
-   #select-period {
-    margin: 2em auto -1.6em;
-    top: 13px;
-}
    
-.dropdown dt a {
+   
+.dmenu {
     background-image: url("images/sprite-layout.png");
     float: left;
     left: -3px;
     position: relative;
     top: -72px;
-background-color: red;
 }
 
 br {
    display: block;
-   margin: -1px 0;
+   margin: 1px 0;
+}
+.km-root input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="image"]):not([type="checkbox"]):not([type="radio"]), .km-root select:not([multiple]), .km-root .k-dropdown {
+    margin-top: -8.2em;
+    right: 7%;
+    width: 90%;
 }
 
+.content ul {
+    margin: 0;
+    padding: 0 0;
+}
+.content ul li {
+    border-bottom: 1px solid #D6DDE0;
+    font-size: 13px;
+    list-style: none outside none;
+    padding-bottom: 15px;
+    padding-top: 7px;
+    position: relative;
+    top: 31px;
+}
+.content {
+    background-color: #FFFFFF;
+    background-image: url("images/content_bottom.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: -7px;
+    padding: 0;
+    position: relative;
+    top: 4px;
+    width: 103%;
+}
     </style>
 

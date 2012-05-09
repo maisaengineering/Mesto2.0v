@@ -1,2 +1,259 @@
-hey hi this is checkin<br>
-<a href="home.html" id="backButton">back</a>
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/kendo.mobile.min.js"></script>
+        <script src="js/console.js"></script>
+        <link href="css/kendo.common.min.css" rel="stylesheet" />
+        <link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <link href="css/main_file.css" rel="stylesheet" />
+       
+       
+        <script>
+            function mobileSalesViewInit() {
+                var listviews = this.element.find("ul.km-listview");
+               
+                $("#select-period").kendoMobileButtonGroup({
+                                                           select: function() {
+                                                           listviews.hide()
+                                                           .eq(this.selectedIndex)
+                                                           .show();
+                                                           },
+                                                           index: 0
+                                                           });
+            }
+            </script>
+        <script>
+           
+            $(document).ready(function(){
+                             
+                             
+                              $("a.tab").click(function () {
+                                              
+                                              
+                                               $(".active").removeClass("active");
+                                              
+                                               $(this).addClass("active");
+                                              
+                                               $(".content").slideUp();
+                                              
+                                               var content_show = $(this).attr("title");
+                                               $("#"+content_show).slideDown();
+                                              
+                                               });
+                             
+                              });
+            </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                              $(".dropdown img.flag").addClass("flagvisibility");
+                             
+                              $(".dropdown dt a").click(function() {
+                                                        $(".dropdown dd ul").toggle();
+                                                        });
+                             
+                              $(".dropdown dd ul li a").click(function() {
+                                                              var text = $(this).html();
+                                                              $(".dropdown dt a span").html(text);
+                                                              $(".dropdown dd ul").hide();
+                                                              $("#result").html("Selected value is: " + getSelectedValue("sample"));
+                                                              });
+                             
+                              function getSelectedValue(id) {
+                              return $("#" + id).find("dt a span.value").html();
+                              }
+                             
+                              $(document).bind('click', function(e) {
+                                               var $clicked = $(e.target);
+                                               if (! $clicked.parents().hasClass("dropdown"))
+                                               $(".dropdown dd ul").hide();
+                                               });
+                             
+                             
+                              $("#flagSwitcher").click(function() {
+                                                       $(".dropdown img.flag").toggleClass("flagvisibility");
+                                                       });
+                              });
+            </script>
+    </head>
+    <body>
+        <div data-role="view" id="buttongroup-home" data-init="mobileSalesViewInit" data-title="Sales Report">
+           
+            <div class="km-navbar">
+                   
+             
+               
+               
+            </div> 
+            
+            <span class="dmenu">    
+                <dl id="sample" class="dropdown">
+                    <dt><a href="#">	</a></dt>
+                    <dd>
+                        <ul>
+							<li><a href="search.html">Search<img class="flag" src="br.png" alt="" /><span class="value">BR</span></a></li>
+							<br>
+							<li><a href="home.html">Mesto<img class="flag" src="fr.png" alt="" /><span class="value">FR</span></a></li>
+							<br>
+							<li><a href="profile.html">Profile<img class="flag" src="de.png" alt="" /><span class="value">DE</span></a></li>
+							<br>
+							<li><a href="inbox.html">Inbox<img class="flag" src="in.png" alt="" /><span class="value">IN</span></a></li>
+							<br>
+							<li><a href="justmet.html">JustMet<img class="flag" src="jp.png" alt="" /><span class="value">JP</span></a></li>
+							<br>
+							<li><a href="checkin.html">Check in<img class="flag" src="cs.png" alt="" /><span class="value">CS</span></a></li>
+						</ul>
+                    </dd>
+                </dl>
+            </span>
+            <ul data-role="listview" data-style="inset" data-type="group">
+                <div id="tabbed_box_1" class="tabbed_box">
+                    <div class="tabbed_area">
+							
+								<center>
+									<form class="searchform">
+										<input class="searchfield" type="text" value="Search by name" onfocus="if (this.value == 'What's happening....') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" />
+									</form>
+								</center>
+							
+                      <div>
+					  <div class="demo2">
+						hello
+					  </div>
+                </div>
+            </ul>
+            
+        </div>
+        <script>
+            window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+            </script>
+    </body>
+</html>
+<style>
+    
+	
+    #select-period {
+       margin: 1em auto -1.6em;
+    }
+    #buttongroup-home ul span {
+        float: right;
+    }
+    #buttongroup-home .sales-up {
+        color: green;
+    }
+    #buttongroup-home .sales-down {
+        color: red;
+    }
+    #buttongroup-home .sales-hold {
+        color: blue;
+    }
+   
+    .setting_style{ background-color: red;}
+   
+    div.km-navbar #backButton {
+        border-width: 0 8px 0 14px;
+        right: 26px;
+        max-width: 55px;
+        padding: 0;
+       
+    }
+   
+   
+    .nav-divi{
+        background-color: red;
+        float: right;
+        position: relative;
+        right: 52px;
+        top: -35px;
+		width: 30px;
+    }
+    
+    .mainselection{ position: relative;   top: -4px;}
+    .gpssetting1{ position: relative; float: right; right: 60px; top: -38px;}
+   
+ 
+
+    .desc { color:#6b6b6b;}
+    .desc a {color:#0092dd;}
+   
+    .dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px; }
+    .dropdown dd { position:relative; }
+    .dropdown a, .dropdown a:visited { color:#FFF; text-decoration:none; outline:none;}
+    .dropdown a:hover { color:#5d4617;}
+   
+   
+    .dropdown dt a span {cursor:pointer; display:block; padding:5px;}
+    
+    .dropdown span.value { display:none;}
+    .dropdown dd ul li a { padding:5px; display:block;}
+    .dropdown dd ul li a:hover { background-color:#4A235E ; color: #FFF;}
+   
+    .dropdown img.flag { border:none; vertical-align:middle; margin-left:10px; }
+    .flagvisibility { display:none;}
+	
+
+   
+.dmenu {
+    background-image: url("images/sprite-layout.png");
+    float: left;
+    left: -3px;
+    position: relative;
+    top: -72px;
+}
+
+br {
+   display: block;
+   margin: 1px 0;
+}
+.km-root input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="image"]):not([type="checkbox"]):not([type="radio"]), .km-root select:not([multiple]), .km-root .k-dropdown {
+    margin-top: -8.2em;
+    right: 7%;
+    width: 90%;
+	 background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.content ul {
+    margin: 0;
+    padding: 0 0;
+}
+.content ul li {
+    border-bottom: 1px solid #D6DDE0;
+    font-size: 13px;
+    list-style: none outside none;
+    padding-bottom: 15px;
+    padding-top: 7px;
+    position: relative;
+    top: 31px;
+}
+.content {
+    background-color: #FFFFFF;
+    background-image: url("images/content_bottom.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: -7px;
+    padding: 0;
+    position: relative;
+    top: 4px;
+    width: 103%;
+}
+ul, li {
+    list-style-type: none;
+}
+.demo2 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 100%;
+    margin: -10px;
+    position: relative;
+    top: 29px;
+    width: 103%;
+}
+.tabbed_area {
+    background: none repeat scroll 0 0 #E1E5FF ;
+    height: 274px;
+    margin: 8px;
+    top: -87px;
+    width: 100%;
+}
+    </style>
+

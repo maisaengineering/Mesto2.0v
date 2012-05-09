@@ -10,7 +10,9 @@
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
-
+#select-period {
+    margin: 1em auto .4em auto;
+}
 #buttongroup-home ul span {
 	float: right;
 }
@@ -36,6 +38,15 @@ div.km-navbar #backButton {
 .distance{position:relative; float: right;}
 
 
+.dropdown dt a {
+    background: url("images/sprite-layout.png") no-repeat scroll right center transparent;
+    border-radius: 5em 5em 5em 5em;
+    display: block;
+    height: 3.5em;
+    position: relative;
+    right: -26px;
+    width: 7em;
+}
 .nav-divi{
 	background-color: #7185A2;
     float: right;

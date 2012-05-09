@@ -3,16 +3,7 @@
     margin: -14px auto;
     width: 100%;
 }
-ul.tabs1 li a {
-    border-radius: 7px 7px 7px 7px;
-    box-shadow: 0 1px 1px 1px #FFFFFF inset;
-    font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 6px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
+
 ul.tabs1 li a.active {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
@@ -29,14 +20,38 @@ ul.tabs1 li a.active {
     position: relative;
     top: -1px;
 }
+.km-ios .km-buttongroup .km-button {
+    background-image: -moz-linear-gradient(center top , #5A2B71, #5A2B71 0%, #5A2B71);
+    border-color: rgba(0, 0, 0, 0.4);
+    border-right-width: 0;
+    color: #FFFFFF;
+}
+.km-ios .km-buttongroup .km-state-active {
+    background-color: #5A2B71;
+    background-image: -moz-linear-gradient(center top , rgba(0, 0, 0, 0.3), transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.25));
+    border-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px 0 0 5px;
+    border-width: 1px 0 1px 1px;
+    box-shadow: -1px 0 2px rgba(0, 0, 0, 0.6) inset;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+ul.tabs1 li a {
+    box-shadow: 0 1px 1px 1px #FFFFFF inset;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 ul.tabs1 li a {
     background-color: #E1E5FF;
     background-image: url("images/tab_off.jpg");
     background-position: center bottom;
     background-repeat: repeat-x;
-    border: 1px solid #E1E5FF;
-    color: #FFEBB5;
+    color: #000000;
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 8px;
     font-weight: bold;
@@ -44,8 +59,29 @@ ul.tabs1 li a {
     text-decoration: none;
     text-transform: uppercase;
 }
+ul.tabs li a {
+    box-shadow: 0 1px 1px 1px #FFFFFF inset;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
-
+ul.tabs li a {
+    background-color: #E1E5FF;
+    background-image: url("images/tab_off.jpg");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 9px 21px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 .tabbed_box h4 {
     color: #FFFFFF;
     font-family: Arial,Helvetica,sans-serif;
@@ -82,7 +118,6 @@ ul.tabs li {
     list-style: none outside none;
 }
 
-
 ul.tabs li a.active {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
@@ -107,35 +142,9 @@ ul.tabs li a.active {
     padding: 9px;
     position: relative;
     right: -13px;
-    top: -42px;
+    top: -79px;
     width: 101%;
 }
-ul.tabs li a {
-    background-color: #E1E5FF;
-    background-image: url("images/tab_off.jpg");
-    background-position: center bottom;
-    background-repeat: repeat-x;
-    color: #000000;
-    font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 9px 21px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-ul.tabs1 li a {
-    background-color: #E1E5FF;
-    background-image: url("images/tab_off.jpg");
-    background-position: center bottom;
-    background-repeat: repeat-x;
-    color: #000000;
-    font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 6px 7px;
-    text-decoration: none;
-    text-transform: uppercase;
-}	
 .content {
     background-color: #FFFFFF;
     background-image: url("images/content_bottom.jpg");
@@ -148,17 +157,7 @@ ul.tabs1 li a {
     top: 10px;
     width: 103%;
 }
-ul.tabs li a {
-    border-radius: 7px 7px 7px 7px;
-    box-shadow: 0 1px 1px 1px #FFFFFF inset;
 
-    font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 6px 7px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
 
 #content_2, #content_3 {
     display: none;
